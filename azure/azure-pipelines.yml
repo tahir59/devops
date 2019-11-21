@@ -1,0 +1,15 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Docker@2
+  displayName: Build Docker image
+  inputs:
+    containerRegistry: 'rcdocker'
+    repository: 'repository/myapp'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: $(Build.BuildNumber)
