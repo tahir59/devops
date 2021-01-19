@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myshell
+  namespace: default
+  labels:
+    app: myshell
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myshell
+  template:
+    metadata:
+      labels:
+        app: myshell
+    spec:
+      containers:
+        - name: myshell
+          image: ubuntu:18.04
+          args: [bash, -c, 'for ((i = 0; ; i++)); do echo "$i: $(date)"; sleep 100; done']
+          env:
+            - name: http_proxy
+              value: 'http://x.x.x.x'
+            - name: https_proxy
+              value: 'http://x.x.x.x'
+            - name: ftp_proxy
+              value: 'http://x.x.x.x'
+            - name: no_proxy
+              value: 'x.x.x.x'
+          resources:
+            limits:
+              cpu: 512m
+              memory: 512Mi
+            requests:
+              cpu: 256m
+              memory: 256Mi

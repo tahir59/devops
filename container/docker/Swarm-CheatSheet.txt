@@ -1,0 +1,17 @@
+docker swarm init --advertise-addr ip_add
+docker swarm join --token xxxxxx ip_add:2377 manager
+docker swarm join --token xxxxxx ip_add:2377 worker
+docker swarm leave
+
+docker node ls
+docker node rm worker-1
+
+docker service ls
+docker service create --name myservice -p 80:80 image:tag
+docker service ps myservice
+docker service scale myservice=3
+docker service rm myservice
+docker service inspect myservice
+docker service logs myservice
+docker service rollback
+docker service update

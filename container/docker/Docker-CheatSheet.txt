@@ -1,0 +1,88 @@
+* BASIC
+docker version
+docker info
+
+* LIST
+docker container ls
+docker container ls -a
+
+* CONTAINER
+docker container run
+-it
+-d
+--rm
+--name container_name
+-p ext_port:int_port
+-v ext_folder:int_folder
+-e NAME=myapp
+--label label_name
+image_name:tag
+command=/bin/bash
+--restart no
+--restart on-failure
+--restart always
+--restart unless-stopped
+
+docker container stop container_name
+docker container start container_name
+docker container restart container_name
+docker container rm container_name
+docker container rename container_name container_name
+docker exec -it container_name command
+docker update --cpu-shares 512 -m 300M container_name
+
+* DEBUG
+docker container logs container_name
+docker container port container_name
+docker container inspect container_name
+docker container top container_name
+docker container stats container_name
+docker cp foo.txt container_name:/foo.txt
+docker cp container_name:/foo.txt foo.txt
+
+* NETWORK
+docker network ls
+docker network inspect network_name
+docker network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 network_name
+docker network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 -d overlay network_name
+docker network connect network_name container_name
+docker network disconnect network_name container_name
+docker network rm network_name
+docker run -d --net network_name container_name
+
+* VOLUME
+docker volume ls
+docker volume inspect
+docker volume create --name volume_name
+docker volume rm volume_name
+docker run -v volume_name:/path container_name
+
+* IMAGES
+docker image ls
+docker search image_name:tag
+docker pull image_name:tag
+docker push image_name:tag
+docker image rm image_name:tag
+docker commit container_name myimage:tag
+docker save myimage:tag | gzip > myimage_tag.tar.gz
+docker load < myimage_latest.tar.gz
+docker tag image_name myimage:tag
+docker build -t myimage:tag .
+
+* REGISTRY
+docker login
+docker logout
+
+* SYSTEM
+docker system prune
+docker system prune -a
+docker container prune
+docker image prune
+docker volume prune
+docker container rm $(docker container ls -a -q)
+docker image rm $(docker image ls -q)
+
+* DOCKER COMPOSE
+docker-compose up
+docker-compose up -d
+docker-compose down

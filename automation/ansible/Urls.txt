@@ -1,0 +1,17 @@
+- How to Install Ansible AWX on CentOS 7
+https://www.howtoforge.com/tutorial/centos-ansible-awx-installation/
+
+- Ansible AWX Guide: Basic Usage and Configuration
+https://www.howtoforge.com/ansible-awx-guide-basic-usage-and-configuration/
+
+- HOW TO INSTALL ANSIBLE AWX WITHOUT DOCKER ON CENTOS 7 / RHEL 7
+http://yallalabs.com/devops/how-to-install-ansible-awx-without-docker-centos-7-rhel-7/
+
+- HOW TO ADD A NEW INVENTORY, CREATE A HOST AND CREDENTIAL IN AWX ANSIBLE TOWER
+http://yallalabs.com/linux/how-to-add-new-inventory-create-host-credential-awx-ansible-tower/
+
+- HOW TO CREATE A PROJECT IN AWX / ANSIBLE TOWER
+http://yallalabs.com/automation-tool/how-to-create-project-awx-ansible-tower/
+
+- HOW TO CREATE A NEW JOB TEMPLATE IN ANSIBLE TOWER / AWX
+http://yallalabs.com/linux/how-to-create-new-job-template-ansible-tower-awx/

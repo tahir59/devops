@@ -1,0 +1,10 @@
+ansible -m ping all
+ansible -m command -a "ls" all
+ansible-playbook playbook.yaml
+ansible-playbook playbook.yaml -v
+ansible-playbook playbook.yaml --tags "xxx"
+ansible-galaxy [delete|import|info|init|install|list|login|remove|search|setup]
+ansible-vault encrypt playbook.yaml
+ansible-vault decrypt playbook.yaml
+ansible-vault view playbook.yaml
+ansible-playbook playbook.yaml --ask-vault-pass

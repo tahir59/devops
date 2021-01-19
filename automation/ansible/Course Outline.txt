@@ -1,0 +1,28 @@
+* Ansible
+- Introduction & How Ansible Works
+- Lab Setup & Installation
+- Understanding YAML
+- Inventory
+- Playbooks, Plays, Tasks
+- Modules
+- Include
+- Privlege Escalation
+- Tags
+- Handlers
+- Variables
+- Host & Group Variables
+- Loops
+- Conditions
+- Error Handling
+
+* Ansible Advanced
+- Roles
+- Custom Roles
+- Ansible Galaxy
+- Dynamic Inventory
+- Custom Module
+- Asynchronous Actions and Polling
+- Strategies
+- Jinja 2
+- Vault
+- AWX

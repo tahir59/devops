@@ -1,0 +1,8 @@
+- name: Include nginx playbook
+  include: nginx.yaml
+
+- name: Include php playbook
+  include: php.yaml
+
+- name: Include mysql playbook
+  include: mysql.yaml

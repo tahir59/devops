@@ -1,0 +1,5 @@
+* Dashboard
+
+$ kubectl proxy --address='0.0.0.0' --disable-filter=true
+$ kubectl port-forward --namespace <namespace-name> --address=<ip-add> <pod-name> <port-number>:<port-number>
+http://ipadd:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/

@@ -1,0 +1,53 @@
+- FROM
+FROM <image>:<tag>
+
+- MAINTAINER
+MAINTAINER <name>
+
+- ONBUILD
+ONBUILD <Dockerfile INSTRUCTION>
+
+- ARG
+ARG <name>
+
+- LABEL
+LABEL <key>=<value>
+
+- USER
+USER <username>
+
+- WORKDIR
+WORKDIR </path/to/workdir>
+
+- RUN
+RUN <command>
+
+- ADD
+ADD <src> <dest>
+
+- COPY
+COPY <src> <dest>
+
+- EXPOSE
+EXPOSE <port>
+
+- ENV
+ENV <key>=<value>
+
+- VOLUME
+VOLUME <path>
+
+- SHELL
+SHELL <command>
+
+- CMD
+CMD <command>
+
+- ENTRYPOINT
+ENTRYPOINT <command>
+
+- STOPSIGNAL
+STOPSIGNAL <signal>
+
+- HEALTHCHECK
+HEALTHCHECK [<options>] CMD <command>

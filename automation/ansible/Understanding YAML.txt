@@ -1,0 +1,38 @@
+Key Value Pair
+---
+james:
+   name: james john
+   rollNo: 34
+   div: B
+   sex: male
+…
+
+List
+---
+likes:
+   - maths
+   - physics
+   - english
+…
+
+Dictionaries
+---
+- james:
+   name: james john
+   rollNo: 34
+      div: B
+   sex: male
+   likes:
+      - maths
+      - physics
+      - english
+
+- robert:
+      name: robert richardson
+      rollNo: 53
+      div: B
+      sex: male
+   likes:
+      - biology
+      - chemistry
+…

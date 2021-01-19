@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <node name="vm01"
+      description="Windows Server"
+      tags="windows"
+      hostname="ip-addr"
+      osArch="amd64"
+      osFamily="windows"
+      osName="Windows Server 2012 R2"
+      username="admin"
+      winrm-password-storage-path="keys/mykey"
+      winrm-authtype="basic">
+  </node>
+</project>

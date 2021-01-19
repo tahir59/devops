@@ -1,0 +1,82 @@
+- name: Install Apache & PHP on Centos 7
+  hosts: webservers
+  become: yes
+
+  tasks:
+  - name: install apache
+    yum:
+      name: httpd
+      state: installed
+    when: ansible_os_family == "Redhat"
+    tags:
+       - apache
+
+  - name: start and enable service apache
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_os_family == "Redhat"
+    tags:
+       - apache
+
+  - name: install php
+    yum: name={{item}} state=installed
+    with_items:
+    - php
+    - php-mysql
+    notify: restart service httpd
+    when: ansible_os_family == "Redhat"
+    tags:
+       - apache
+
+  handlers:
+  - name: restart service httpd
+    service:
+      name: httpd
+      state: restarted
+    when: ansible_os_family == "Redhat"
+    tags:
+       - apache
+
+- name: Install MySQL on Centos 7
+  hosts: dbservers
+  become: yes
+
+  tasks:
+  - name: install mariadb
+    yum: name={{item}} state=installed
+    with_items:
+    - mariadb-server
+    - mariadb
+    when: ansible_os_family == "Redhat"
+    tags:
+       - mariadb
+
+  - name: start and enable service mariadb
+    service:
+      name: mariadb
+      state: started
+      enabled: yes
+    when: ansible_os_family == "Redhat"
+    tags:
+       - mariadb
+
+- name: Verify Packages
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: ensure all packages installed
+    yum:
+      name: "{{packages}}"
+    vars:
+      packages:
+      - httpd
+      - mariadb-server
+      - mariadb
+      - php
+      - php-mysql
+    when: ansible_os_family == "Redhat"
+    tags:
+       - verify

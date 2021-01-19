@@ -1,0 +1,25 @@
+* Github
+https://github.com/jenkinsci
+
+* Website
+https://www.jenkins.io/
+
+- Documentation
+- Jenkins Handbook 
+https://www.jenkins.io/doc/book/
+- Jenkins Pipeline: Send e-mail notifications
+https://code-maven.com/jenkins-send-email-notifications
+- Jenkins sending email on post build
+https://medium.com/@gustavo.guss/jenkins-sending-email-on-post-build-938b236545d2
+- Sending Notifications in Pipeline
+https://www.cloudbees.com/blog/sending-notifications-pipeline
+- Sending Notifications in Pipeline
+https://dzone.com/articles/sending-notifications-in-pipeline
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+
+* Helm

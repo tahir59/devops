@@ -1,0 +1,25 @@
+* CentOS 7
+yum update
+curl -fsSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+
+* Ubuntu 18.04
+apt update
+curl -fsSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+
+* Storage Driver for Docker
+systemctl stop docker
+touch /etc/docker/daemon.json
+---
+{
+  "storage-driver": "devicemapper"
+}
+---
+systemctl start docker
+https://docs.docker.com/storage/storagedriver/select-storage-driver/
+https://docs.docker.com/storage/storagedriver/overlayfs-driver/

@@ -1,0 +1,59 @@
+- Ansible inventory groups may contain which of the following? (Choose all that apply)
+A: Hosts	(correct)
+B: Groups	(correct)
+C: Plays
+D: Variables	(correct)
+
+- When an Ansible module returns data, how is it formatted?
+A: Integer
+B: Json		(correct)
+C: Python Dictonary
+D: XML
+
+- What module returns Ansible facts?
+A: fact
+B: ping
+C: ad-hoc command
+D: setup	(correct)
+
+- What is the base command to run an ad-hoc ansible command?
+A: ansible -A ad-hoc
+B: ansible-ad-hoc
+C: ansible	(correct)
+D: ansible-playbook
+
+- Which is the default inventory file used by Ansible?
+A: ${PWD}/.inventory
+B: /etc/hosts
+C: /etc/ansible/inventory
+D: /etc/ansible/hosts	(correct)
+
+- What keyword makes Ansible not exit on error and continue play execution?
+A: continoue_play
+B: errors_ignore
+C: ingore_errors	(correct)
+D: skip_errors
+
+- What format must playbooks be written in?
+A: INI
+B: YAML		(correct)
+C: JSON
+D: XML
+
+- What keyword allows selective play execution in Ansible?
+A: handle
+B: tags		(correct)
+C: select
+D: ansible
+
+- What file must be present in each of the tasks, handlers, vars, defaults, and meta directories if they are to be used by Ansible?
+A: main.json
+B: main.yml	(correct)
+C: main.ini
+D: main.exe
+
+- What is galaxy.ansible.com a repository of?
+A: Playbooks
+B: Inventory
+C: Modules
+D: Roles	(correct)

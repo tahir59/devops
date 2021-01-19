@@ -1,0 +1,15 @@
+* Docker Compose
+
+- docker-compose config
+- docker-compose build
+- docker-compose start
+- docker-compose stop
+- docker-compose restart
+- docker-compose up
+- docker-compose up -d
+- docker-compose down
+- docker-compose exec myapp pwd
+- docker-compose ps
+- docker-compose top
+- docker-compose events
+- docker-compose logs

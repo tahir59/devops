@@ -1,0 +1,21 @@
+* Github
+
+* Website
+https://about.gitlab.com/
+
+- Documentation
+https://docs.gitlab.com/
+- General LDAP Setup 
+https://docs.gitlab.com/ee/administration/auth/ldap/index.html
+- NGINX settings 
+https://docs.gitlab.com/omnibus/settings/nginx.html
+- How To Secure GitLab Server with SSL Certificate
+https://computingforgeeks.com/how-to-secure-gitlab-server-with-ssl-certificate/
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+
+* Helm

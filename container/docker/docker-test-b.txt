@@ -1,0 +1,203 @@
+- How should we give a user permission to interact with the Docker daemon on a machine without giving them unnecessary additional access?
+
+A: Add the user to the docker group.  (CORRECT)
+B: Give the user the ability to run docker commands with sudo.
+C: Have them log in as the docker user.
+D: Give the user the root user credentials so they can run docker commands as root.
+
+- Dylan is getting ready to run a container. He needs this container to auto-restart whenever its process exits, but he doesn't want it to restart if the container had manually stopped earlier. Which restart policy should he use?
+
+A: manual-control
+B: on-failure
+C: always
+D: unless-stopped (CORRECT)
+
+- What is the difference between a manager and a worker in Docker swarm?
+
+A: Managers create new workers.
+B: Managers handle networking, while workers handle containers.
+C: Managers never execute containers, workers do.
+D: Managers control the cluster, while workers only execute workloads.  (CORRECT)
+
+- Which of the following commands will run a busybox container and automatically delete it once it exits?
+
+A: docker run --restart no busybox
+B: docker run --rm busybox  (CORRECT)
+C: docker run --rm --restart on-failure busybox
+D: docker container rm busybox
+
+- What Linux feature does Docker use in order to limit memory usage for containers?
+
+A: The mem namespace.
+B: Control groups (cgroups)  (CORRECT)
+C: Capabilities
+D: Namespaces
+
+- Which Docker edition would we choose for obtaining the latest Docker Engine updates?
+
+A: Docker Developer Edition (DE)
+B: Docker Community Edition (CE)
+C: Either Docker CE or Docker EE  (CORRECT)
+D: Docker Enterprise Edition (EE)
+
+- What command would we use to locate the layered file system data for an image on a machine?
+
+A: docker layer inspect
+B: docker pull history
+C: docker image inspect (CORRECT)
+D: docker image layers
+
+- What does the CMD directive do?
+
+A: It sets the default command for the image that runs if no other command is specified.  (CORRECT)
+B: It runs a command on the host when the container starts.
+C: It runs a command within the image and commits it to the result.
+D: It executes a command during the build process.
+
+- Which of the following is true about building docker images?
+
+A: Only layers that have changed since the last build (and any following layers) are built. (CORRECT)
+B: Every layer of the image is re-built every time docker build is executed.
+C: Every Dockerfile can have only one FROM directive.
+D: Docker images are built using Docker Compose files.
+
+- Which Dockerfile directive would set up the base image that can serve as our starting point for establishing a new image?
+
+A: START
+B: FROM (CORRECT)
+C: BASE
+D: ARG
+
+- What is the term for a package containing all the software that's needed to run a Docker container?
+
+A: Package
+B: Repository
+C: Kernel
+D: Image	(CORRECT)
+
+- What command should we use if we want to view logs for all of the tasks in a service called my-service?
+
+A: docker task logs my-service
+B: docker logs my-service
+C: docker service logs my-service	(CORRECT)
+D: docker container logs my-service
+
+- What tool should we use if we need to manage a multi-container application as a unit on a single Docker host?
+
+A: We should use Docker Swarm.
+B: We should execute docker-run.
+C: We should use a Docker stack.
+D: We should use Docker Compose.	(CORRECT)
+
+- Which of the following commands can we use to view detailed metadata about a container? (Choose two)
+
+A: docker metadata
+B: docker container inspect	(CORRECT)
+C: docker query
+D: docker inspect	(CORRECT)
+
+- Which of the following scenarios would still allow the quorum to have maintenance in a swarm cluster? (Choose two)
+
+A: A 3-node cluster with 2 nodes down.
+B: A 4-node cluster with 2 nodes down.
+C: A 7-node cluster with 3 nodes down.	(CORRECT)
+D: A 3-node cluster with 1 node down.	(CORRECT)
+
+- How would we create a volume called new-volume without running a container?
+
+A: We would run docker volume create new-volume.	(CORRECT)
+B: We would use docker run -v new-volume:/tmp nginx.
+C: We would run docker run --rm -v new-volume:/tmp nginx.
+D: We would run docker create volume new-volume.
+
+- Which of the following commands would we use to locate the data for a volume on the host?
+
+A: docker volume locate <volume>
+B: docker volume navigate <volume>
+C: docker volume inspect <volume>	(CORRECT)
+D: docker volume logs <volume>
+
+- Which of the following commands may result in the creation of a new named volume?
+
+A: docker run -v /my-vol:/tmp:create nginx
+B: docker run -v /my-vol:/tmp nginx
+C: docker run --mount source=/my-vol,destination=/tmp nginx
+D: docker run -v my-vol:/tmp nginx	(CORRECT)
+
+- Which of the following commands would we use to automatically identify and delete images that are not being used?
+
+A: docker image prune	(CORRECT)
+B: docker image rm --all
+C: docker image rm
+D: docker image rm -a
+
+- Shuja has created a container with a volume called shared-data. He wants to create a new container that can access the same data as the first container, but he wants this new container only to be able to read the data, not modify it. How can he accomplish this?
+
+A: Shuja can use docker run --name new-container -v shared-data:/tmp:ro nginx.	(CORRECT)
+B: This task is not possible for Shuja to complete because we cannot mount the same volume to two containers.
+C: Shuja can use docker run --name new-container -v shared-data:/tmp nginx.
+D: Shuja can create a bind mount for the new container that points to the physical location of the shared volume on the host.
+
+- Which storage driver is the default for current versions of CentOS/RHEL and Ubuntu?
+
+A: aufs
+B: direct-lvm
+C: devicemapper
+D: overlay2		(CORRECT)
+
+- Which of the following commands will create a new bridge network?
+
+A: docker network create --network-driver bridge my-network
+B: docker network create my-network		(CORRECT)
+C: docker network create --driver overlay my-network
+D: docker network create --network bridge my-network
+
+- When creating a container, how would we specify that the container should be attached to an existing network called my-network?
+
+A: We can use docker run --network my-network nginx.	(CORRECT)
+B: We can use docker run --network-alias web nginx.
+C: We can use docker run -n my-network nginx.
+D: We can use docker run --attach my-network nginx.
+
+- Which of the following network drivers is the default for connecting containers on the same host?
+
+A: overlay
+B: host
+C: macvlan
+D: bridge	(CORRECT)
+
+- Which of the following statements about the none network driver is accurate?
+
+A: Thenone driver implements communication between containers.
+B: The none driver implements sandboxes.	(CORRECT)
+C: The none driver does not provide network isolation between containers.
+D: The none driver is the default when no driver is selected.
+
+- Which network driver connects containers directly to a network stack on the host machine without any isolation?
+
+A: none
+B: bridge
+C: macvlan
+D: host	(CORRECT)
+
+- Which of the following commands will attach the tasks of a new service to an existing overlay network called my-overlay?
+
+A: docker service create --network-driver overlay nginx
+B: docker service create --n my-overlay nginx
+C: docker service create --network my-overlay nginx	(CORRECT)
+D: docker service create --attach my-overlay nginx
+
+- Docker containers package up the entire OS and make it easier to deploy?
+
+A: True
+B: False	(CORERCT)
+
+- Is Docker a piece of hardware running in datacenter?
+
+A: True
+B: False	(CORERCT)
+
+- We have several monolithic applications in our environment. But Docker only works for microservices right?
+
+A: True
+B: False	(CORERCT)

@@ -1,0 +1,23 @@
+* Github
+https://github.com/spinnaker/spinnaker
+
+* Website
+https://spinnaker.io/
+
+- Documentation
+https://spinnaker.io/guides/
+- Get Started Using Spinnaker
+https://spinnaker.io/guides/user/get-started/
+- Set up Spinnaker
+https://spinnaker.io/setup/
+- Concepts
+https://spinnaker.io/concepts/
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+
+* Helm
+https://github.com/helm/charts/tree/master/stable/spinnaker

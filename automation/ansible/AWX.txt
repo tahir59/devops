@@ -1,0 +1,46 @@
+- Install EPEL Repository
+yum install -y epel-release
+
+- Install Deps
+yum install -y rabbitmq-server memcached ansible
+
+- Install PostgreSQL 9.6
+yum install -y https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+yum install postgresql96-server -y
+
+- Initialize Database
+/usr/pgsql-9.6/bin/postgresql96-setup initdb
+
+- Install and Configure Nginx
+yum install -y nginx
+cd /etc/nginx
+cp nginx.conf nginx.conf.bkp
+wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/sunilsankar/awx-build/master/nginx.conf
+
+- Start and Enable services
+systemctl start rabbitmq-server && systemctl enable rabbitmq-server
+systemctl start postgresql-9.6 && systemctl enable postgresql-9.6
+systemctl start memcached && systemctl enable memcached
+systemctl start nginx && systemctl enable nginx
+
+- Install AWX
+wget -O /etc/yum.repos.d/awx-rpm.repo https://copr.fedorainfracloud.org/coprs/mrmeee/awx/repo/epel-7/mrmeee-awx-epel-7.repo
+yum install -y awx
+
+- Database
+sudo -u postgres createuser -S awx
+sudo -u postgres createdb -O awx awx
+sudo -u awx /opt/awx/bin/awx-manage migrate
+
+- Initializing Configuration for AWX
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'root@localhost', 'password')" | sudo -u awx /opt/awx/bin/awx-manage shell
+sudo -u awx /opt/awx/bin/awx-manage create_preload_data
+sudo -u awx /opt/awx/bin/awx-manage provision_instance --hostname=$(hostname)
+sudo -u awx /opt/awx/bin/awx-manage register_queue --queuename=tower --hostnames=$(hostname)
+
+- Start and Enable AWX services
+systemctl start awx-cbreceiver && systemctl enable awx-cbreceiver
+systemctl start awx-dispatcher && systemctl enable awx-dispatcher
+systemctl start awx-channels-worker && systemctl enable awx-channels-worker
+systemctl start awx-daphne && systemctl enable awx-daphne
+systemctl start awx-web && systemctl enable awx-web

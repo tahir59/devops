@@ -1,0 +1,33 @@
+{
+  "uid": "rule:core:echo-0",
+  "tags": [],
+  "type": {
+    "ref": "standard",
+    "parameters": {}
+  },
+  "enabled": true,
+  "trigger": {
+    "type": "core.st2.webhook",
+    "ref": "core.ca97e5ab-a908-48f6-8e25-2d7089915471",
+    "description": "Trigger type for registering webhooks that can consume arbitrary payload.",
+    "parameters": {
+      "url": "echo0"
+    }
+  },
+  "metadata_file": "",
+  "context": {
+    "user": "st2admin"
+  },
+  "criteria": {},
+  "action": {
+    "ref": "core.echo",
+    "description": "Action that executes the Linux echo command on the localhost.",
+    "parameters": {
+      "message": "hello world!"
+    }
+  },
+  "pack": "core",
+  "ref": "core.echo-0",
+  "id": "5f61c1ad7fe5bdf346d7951d",
+  "name": "echo-0"
+}

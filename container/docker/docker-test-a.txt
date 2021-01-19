@@ -1,0 +1,59 @@
+- Which of the following commands will build an image from a Dockerfile located in the current directory and tag it as my-custom-image:1?
+A: docker build -t my-custom-image:1 .		(correct)
+B: docker build -tag my-custom-image:1 .
+C: docker build -tag my-custom-image:1
+D: docker build .
+
+- Which storage driver is the default for current versions of CentOS/RHEL and Ubuntu?
+A: aufs
+B: direct-lvm
+C: devicemapper
+D: overlay2		(correct)
+
+- Which of the following commands would we use to retrieve a list of volumes on the current machine?
+A: docker volume ps
+B: docker volume rm
+C: docker volume inspect
+D: docker volume ls		(correct)
+
+- Which of the following commands will allow us to mount the /my/path directory on the host to a container? (Choose two)
+A: docker run -v /my/path:/tmp nginx		(correct)
+B: docker run --mount source=/my/path,destination=/tmp nginx		(correct)
+C: docker run --mount source=new-volume,destination=/tmp nginx
+D: docker run --mount source=new-volume,hostpath=/my/path,destination=/tmp nginx
+
+- What is the primary purpose of a Docker registry?
+A: It builds images
+B: It stores and organizes Dockerfiles
+C: It provides a central location for storing and distributing images		(correct)
+D: Scan images for vulnerabilities
+
+- What tool should we use if we need to manage a multi-container application as a unit on a single Docker host?
+A: We should use Docker Swarm
+B: We should execute docker-run
+C: We should use a Docker stack
+D: We should use Docker Compose		(correct)
+
+- Dylan is getting ready to run a container. He needs this container to auto-restart whenever its process exits, but he doesn't want it to restart if the container had manually stopped earlier. Which restart policy should he use?
+A: manual-control
+B: on-failure
+C: always
+D: unless-stopped		(correct)
+
+- When creating a container, how would we specify that the container should be attached to an existing network called my-network?
+A: We can use docker run --network my-network nginx		(correct)
+B: We can use docker run --network-alias web nginx
+C: We can use docker run -n my-network nginx
+D: We can use docker run --attach my-network nginx
+
+- How would we create a new swarm cluster?
+A: Run docker cluster create
+B: Run docker swarm init		(correct)
+C: Use a Docker compose file that defines a new cluster
+D: Start dockerd with the swarm=true flag
+
+- Which network driver connects containers directly to a network stack on the host machine without any isolation?
+A: none
+B: bridge
+C: macvlan
+D: host		(correct)

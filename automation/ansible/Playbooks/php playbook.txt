@@ -1,0 +1,14 @@
+- name: Install PHP on Centos 7
+  hosts: all
+
+  tasks:
+  - name: install php
+    yum: name={{item}} state=installed
+    with_items:
+    - php
+    - php-mysql
+
+  - name: restart service httpd
+    service:
+      name: httpd
+      state: restarted

@@ -1,0 +1,9 @@
+FROM ubuntu:18.04
+MAINTAINER  tahirjaved  <tahir.javed@royalcyber.com>
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
+RUN apt-get -y install apache2
+RUN apt-get -y install php libapache2-mod-php php-mysql
+RUN apt-get -y install mysql-server
+EXPOSE 80
+CMD /bin/bash

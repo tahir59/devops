@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+<node name="vm01"
+  tags="centos, linux"
+  osFamily="unix"
+  username="root"
+  hostname="ip-addr"
+  ssh-authentication="password"
+  sudo-command-enabled="true"
+  ssh-password-option="option.sshPassword1"
+  sudo-command-enabled="true"
+  sudo-password-storage-path="keys/mykey"
+  file-copier="ssh-copier"
+  ssh-options="-o ConnectTimeout=5000"/>
+ />
+</project

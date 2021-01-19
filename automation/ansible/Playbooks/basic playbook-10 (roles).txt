@@ -1,0 +1,9 @@
+- name: Install Apache PHP & MySQL Roles
+  hosts: all
+  become: yes
+  ignore_errors: yes
+
+  roles:
+     - nginxinc.nginx
+     - geerlingguy.php
+     - geerlingguy.mysql

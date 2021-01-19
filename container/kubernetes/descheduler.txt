@@ -1,0 +1,7 @@
+- URLs
+https://github.com/kubernetes-sigs/descheduler
+
+- Install Descheduler as a CronJob
+kubectl create -f kubernetes/rbac.yaml
+kubectl create -f kubernetes/configmap.yaml
+kubectl create -f kubernetes/cronjob.yaml

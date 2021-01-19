@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  labels:
+    app: grafana
+  name: istio-ingress
+  namespace: istio-system
+spec:
+  rules:
+  - host: grafana-istio.local
+    http:
+      paths:
+      - backend:
+          serviceName: grafana
+          servicePort: 3000
+        path: /
+  - host: kiali-istio.local
+    http:
+      paths:
+      - backend:
+          serviceName: kiali
+          servicePort: 20001
+        path: /
+  - host: jaeger-istio.local
+    http:
+      paths:
+      - backend:
+          serviceName: tracing
+          servicePort: 80
+        path: /

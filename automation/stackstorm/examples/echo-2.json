@@ -1,0 +1,33 @@
+{
+  "uid": "rule:core:echo-2",
+  "tags": [],
+  "type": {
+    "ref": "standard",
+    "parameters": {}
+  },
+  "enabled": true,
+  "trigger": {
+    "type": "core.st2.webhook",
+    "ref": "core.9bd8dbde-a498-472f-ac22-3956a9a5a32a",
+    "description": "Trigger type for registering webhooks that can consume arbitrary payload.",
+    "parameters": {
+      "url": "cert3d"
+    }
+  },
+  "metadata_file": "",
+  "context": {
+    "user": "st2admin"
+  },
+  "criteria": {},
+  "action": {
+    "ref": "core.local",
+    "description": "Action that executes an arbitrary Linux command on the localhost.",
+    "parameters": {
+      "cmd": "echo 'hello world!'"
+    }
+  },
+  "pack": "core",
+  "ref": "core.echo-2",
+  "id": "5f61d1e8167f960031bb729c",
+  "name": "echo-2"
+}

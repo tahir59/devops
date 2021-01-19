@@ -1,0 +1,20 @@
+* Install Minikube on Ubuntu 18.04
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+chmod +x minikube
+cp minikube /usr/local/bin && rm minikube
+
+* Commands
+minikube start
+minikube start --memory <size> --cpus <size> --disk-size <size>
+minikube stop
+minikube status
+minikube delete
+minikube version
+minikube ip
+minikube logs
+minikube dashboard
+minikube dashboard --url
+minikube ssh
+minikube addons list
+minikube addons enable <name>
+eval $(minikube docker-env)

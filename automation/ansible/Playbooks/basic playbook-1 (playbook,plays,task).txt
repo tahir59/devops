@@ -1,0 +1,45 @@
+- name: Install LAMP Stack on Centos 7
+  hosts: all
+
+  tasks:
+  - name: install apache package httpd
+    yum:
+      name: httpd
+      state: installed
+
+  - name: start and enable service apache
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: install mariadb package mariadb-server
+    yum:
+      name: mariadb-server
+      state: installed
+
+  - name: install mariadb package mariadb
+    yum:
+      name: mariadb
+      state: installed
+
+  - name: start and enable service mariadb
+    service:
+      name: mariadb
+      state: started
+      enabled: yes
+
+  - name: install php package php
+    yum:
+      name: php
+      state: installed
+
+  - name: install php package php-mysql
+    yum:
+      name: php-mysql
+      state: installed
+
+  - name: restart service httpd
+    service:
+      name: httpd
+      state: restarted

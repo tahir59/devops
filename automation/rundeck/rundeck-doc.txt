@@ -1,0 +1,42 @@
+* Github
+https://github.com/rundeck/rundeck
+
+* Website
+https://www.rundeck.com
+
+- Documentation
+https://docs.rundeck.com/docs/
+- Installation
+https://docs.rundeck.com/docs/administration/install/
+- Getting Started
+https://docs.rundeck.com/docs/manual/03-getting-started.html
+- Installing on Ubuntu or Debian Linux distributions
+https://docs.rundeck.com/docs/administration/install/linux-deb.html
+- Using Postgres as a database backend
+https://docs.rundeck.com/docs/administration/configuration/database/postgres.html
+- Authenticating Users
+https://docs.rundeck.com/docs/administration/security/authentication.html#ldap
+- Access Control Policy
+https://docs.rundeck.com/docs/administration/security/authorization.html#access-control-policy-2
+- Configuration
+https://docs.rundeck.com/docs/administration/configuration/config-file-reference.html
+- Configure Rundeck LADAP
+https://devopstales.github.io/home/rundeck-ldap/
+- Integrating RunDeck and LDAP/ActiveDirectory for Authentication
+https://medium.com/@eric.rodriguez/integrating-rundeck-and-ldap-activedirectory-for-authentication-2203e5ce06fa
+- Py-WinRM Node Executor
+https://resources.rundeck.com/plugins/py-winrm-plugin/
+- Overthere WinRM NodeExecutor
+https://resources.rundeck.com/plugins/rundeck-winrm/
+- PowerShell Node Execution
+https://docs.rundeck.com/docs/administration/projects/node-execution/powershell.html#authentication-types
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+https://hub.docker.com/r/rundeck/rundeck
+
+* Helm
+https://github.com/helm/charts/tree/master/incubator/rundeck
