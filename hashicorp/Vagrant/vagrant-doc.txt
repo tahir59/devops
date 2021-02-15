@@ -1,0 +1,13 @@
+* GitHub
+https://github.com/hashicorp/vagrant
+
+* Vagrant
+https://www.vagrantup.com/
+
+- Documentation
+https://www.vagrantup.com/docs
+- HashiCorp Learn
+https://learn.hashicorp.com/vagrant
+
+* Vagrant Boxes
+https://app.vagrantup.com/boxes/search

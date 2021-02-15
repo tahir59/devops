@@ -1,0 +1,31 @@
+* Commands
+vagrant version
+vagrant box
+vagrant up
+vagrant up --provider=virtualbox
+vagrant suspend
+vagrant halt
+vagrant destroy
+vagrant status
+vagrant ssh
+
+* Install Vagrant on Linux
+wget https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_linux_amd64.zip
+unzip vagrant_2.2.10_linux_amd64.zip
+mv vagrant /usr/bin
+
+* Vagrant Box
+vagrant box list
+vagrant box add box_name box_name
+vagrant box remove box_name
+vagrant box update box_name box_name
+
+* Vagrant Share
+vagrant plugin install vagrant-share
+vagrant share
+
+* VMWare Provider
+vagrant plugin install vagrant-vmware-desktop
+
+* Ansible Provisioner
+https://www.vagrantup.com/docs/provisioning/ansible

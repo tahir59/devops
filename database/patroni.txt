@@ -1,0 +1,7 @@
+* Commands
+patronictl list
+patronictl pause
+patronictl resume
+patronictl reload cluster_name node_name
+patronictl restart cluster_name node_name
+patronictl reinit cluster_name node_name

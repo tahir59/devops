@@ -1,0 +1,5 @@
+* Commands
+mongo -u root -p password
+show dbs;
+show users;
+show roles;

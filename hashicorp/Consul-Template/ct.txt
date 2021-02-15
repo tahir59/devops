@@ -1,0 +1,10 @@
+* Commands
+consul-template --version
+consul-template -config "./config.hcl"
+consul-template -config "./config.hcl" -once
+consul-template -config "./config.hcl" -log-level=debug
+
+* Install Consul Template on Linux
+wget https://releases.hashicorp.com/consul-template/0.25.1/consul-template_0.25.1_linux_amd64.zip
+unzip consul-template_0.25.1_linux_amd64.zip
+mv consul-template /usr/bin

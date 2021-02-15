@@ -1,0 +1,40 @@
+* Commands
+vault version
+vault status
+
+* Variables
+export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_API_ADDR=http://127.0.0.1:8200
+export VAULT_CLUSTER_ADDR=http://127.0.0.1:8201
+export VAULT_TOKEN="xxxxxxxxxxxxxxxx"
+
+* Admin Policy
+vault policy write admin admin-policy.hcl
+vault policy list
+vault policy read admin
+ADMIN_TOKEN=$(vault token create -format=json -policy="admin" | jq -r ".auth.client_token")
+vault token capabilities $ADMIN_TOKEN sys/auth/approle
+vault token capabilities $ADMIN_TOKEN identity/entity
+
+* Generate Root Tokens Using Unseal Keys - OTP
+vault operator generate-root -init
+vault operator generate-root
+vault operator generate-root -decode=xxxxxxxxxxxxxxxx -otp=xxxxxxxxxxxxxxxx
+
+* Generate Root Tokens Using Unseal Keys - PGP
+vault operator generate-root -init -pgp-key=keybase:sethvargo
+vault operator generate-root
+echo "xxxxxxxxxxxxxxxx" | base64 --decode | gpg --decrypt
+
+* Rekeying Vault
+vault operator rekey -init -key-shares=3 -key-threshold=2
+vault operator rekey -nonce=<nonce>
+
+* Rotating the Encryption Key
+vault operator rotate
+
+* Rate Limit
+vault write sys/quotas/rate-limit/global-rate rate=500
+vault read sys/quotas/rate-limit/global-rate
+vault write sys/quotas/rate-limit/rate-test path=test rate=1
+vault read sys/quotas/rate-limit/rate-test

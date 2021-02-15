@@ -3,3 +3,136 @@ apt-get update && apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
 apt-get update && apt-get install -y kubectl
+
+* kubectl namespaces
+kubectl get namespaces
+kubectl describe namespace <namespaces-name>
+kubectl delete namespace <namespaces-name>
+kubectl create namespace <namespace-name>
+
+* kubectl pods
+kubectl get pods
+kubectl get pods -o wide
+kubectl get pods -o yaml
+kubectl describe pod <pod-name>
+kubectl delete pod <pod-name>
+
+* kubectl deployments
+kubectl get deployments
+kubectl describe deployment <deployment-name>
+kubectl delete deployment <deployment-name>
+kubectl scale --replicas=<replica-num> deployment/<deployment-name>
+
+* kubectl statefulsets
+kubectl get statefulsets
+kubectl describe statefulset <statefulsets-name>
+kubectl delete statefulset <statefulsets-name>
+
+* kubectl daemonsets
+kubectl get daemonsets
+kubectl describe daemonset <deployment-name>
+kubectl delete daemonset <deployment-name>
+
+* kubectl jobs
+kubectl get jobs
+kubectl describe job <job-name>
+kubectl delete job <job-name>
+
+* kubectl cronjobs
+kubectl get cronjobs
+kubectl describe cronjob <cronjob-name>
+kubectl delete cronjob <cronjob-name>
+
+* kubectl services
+kubectl get services
+kubectl describe service <service-name>
+kubectl delete service <service-name>
+kubectl expose deployment <deployment-name> --type=NodePort
+kubectl expose deployment <deployment-name> --type=LoadBalancer
+
+* kubectl ingress
+kubectl get ingress
+kubectl describe ingress <ingress-name>
+kubectl delete ingress <ingress-name>
+
+* kubectl configmaps
+kubectl get configmaps
+kubectl get configmaps -o yaml
+kubectl describe configmap <configmap-name>
+kubectl delete configmap <configmap-name>
+
+* kubectl secrets
+kubectl get secrets
+kubectl describe secret <secret-name>
+kubectl delete secret <secret-name>
+kubectl create secret tls secret-name --key key.pem --cert cert.crt
+
+* kubectl persistentvolume
+kubectl get pv
+kubectl describe pv <persistentvolume-name>
+kubectl delete pv <persistentvolume-name>
+
+* kubectl persistentvolumeclaim
+kubectl get pvc
+kubectl describe pvc <persistentvolumeclaim-name>
+kubectl delete pvc <persistentvolumeclaim-name>
+
+* kubectl serviceaccounts
+kubectl get serviceaccounts
+kubectl describe serviceaccount <serviceaccount-name>
+kubectl delete serviceaccount <serviceaccount-name>
+
+* kubectl roles
+kubectl get roles
+kubectl describe role <role-name>
+kubectl delete role <role-name>
+
+* kubectl rolebindings
+kubectl get rolebindings
+kubectl describe rolebinding <rolebinding-name>
+kubectl delete rolebinding <rolebinding-name>
+
+* kubectl clusterroles
+kubectl get clusterroles
+kubectl describe clusterrole <clusterrole-name>
+kubectl delete clusterrole <clusterrole-name>
+
+* kubectl clusterrolebindings
+kubectl get clusterrolebindings
+kubectl describe clusterrolebinding <clusterrolebinding-name>
+kubectl delete clusterrolebinding <clusterrolebinding-name>
+
+* kubectl hpa
+kubectl get hpa
+kubectl describe hpa <hpa-name>
+kubectl delete hpa <hpa-name>
+
+* kubectl nodes
+kubectl get nodes
+kubectl describe nodes <node-name>
+kubectl top nodes
+
+* kubectl events
+kubectl get events
+kubectl get events -w
+
+* kubectl logs
+kubectl logs <pod-name>
+kubectl logs -f <pod-name>
+
+* kubectl cluster
+kubectl cluster-info
+Kubectl get events
+
+* kubectl rollout
+kubectl rollout status deployment_name
+kubectl rollout history deployment_name
+kubectl rollout undo deployment_name
+
+* kubectl taint
+kubectl taint nodes nodename key=value:NoSchedule
+
+* kubectl interactive shell
+kubectl run myshell --rm -i --tty --image ubuntu -- bash
+kubectl run myshell --rm -i --tty --image mkrishnamurthy/nslookup -- bash
+kubectl run myshell --rm -i --tty --image tutum/dnsutils -- bash

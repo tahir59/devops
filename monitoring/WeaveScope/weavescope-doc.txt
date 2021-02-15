@@ -1,0 +1,17 @@
+* Github
+https://github.com/weaveworks/scope
+
+* Website
+https://www.weave.works/oss/scope/
+
+- Doc
+https://www.weave.works/docs/scope/latest/introducing/
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+
+* Helm
+https://github.com/helm/charts/tree/master/stable/weave-scope

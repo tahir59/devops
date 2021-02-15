@@ -1,0 +1,8 @@
+* GitHub
+http://www.confd.io/
+
+* Vagrant
+https://github.com/kelseyhightower/confd
+
+- Documentation
+https://github.com/kelseyhightower/confd/tree/master/docs

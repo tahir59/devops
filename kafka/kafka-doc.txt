@@ -1,0 +1,22 @@
+* Github
+https://github.com/apache/kafka
+https://github.com/lemastero/kafka-manager
+
+* Website
+https://kafka.apache.org/
+
+- Documentation
+https://kafka.apache.org/documentation/
+https://kafka.apache.org/intro
+https://kafka.apache.org/quickstart
+https://www.bogotobogo.com/Hadoop/BigData_hadoop_Zookeeper_Kafka.php
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+
+* Helm
+https://github.com/helm/charts/tree/master/incubator/kafka
+https://github.com/helm/charts/tree/master/stable/kafka-manager

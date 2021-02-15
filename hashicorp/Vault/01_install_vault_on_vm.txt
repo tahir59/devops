@@ -1,0 +1,5 @@
+- Install Vault on Linux
+$ wget https://releases.hashicorp.com/vault/1.5.2/vault_1.5.2_linux_amd64.zip
+$ unzip vault_1.5.2_linux_amd64.zip
+$ chown root:root vault
+$ mv vault /usr/local/bin/

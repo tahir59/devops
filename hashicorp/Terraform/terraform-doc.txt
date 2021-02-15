@@ -1,0 +1,33 @@
+* Github
+https://github.com/hashicorp/terraform
+
+* Website
+https://www.terraform.io/
+
+- Documentation
+https://www.terraform.io/docs/index.html
+- HashiCorp Learn
+https://learn.hashicorp.com/terraform
+- Udemy
+https://github.com/zealvora/terraform-beginner-to-advanced-resource
+
+* Terraform Module Registry
+https://registry.terraform.io/
+
+* A Comprehensive Guide to Terraform
+https://blog.gruntwork.io/a-comprehensive-guide-to-terraform-b3d32832baca
+
+* How to get started with Terraform
+https://upcloud.com/community/tutorials/get-started-terraform/
+
+* How to use Terraform variables
+https://upcloud.com/community/tutorials/terraform-variables/
+
+* Terragrunt
+https://github.com/gruntwork-io/terragrunt
+
+* Terragrunt: how to keep your Terraform code DRY and maintainable
+https://blog.gruntwork.io/terragrunt-how-to-keep-your-terraform-code-dry-and-maintainable-f61ae06959d8
+
+* Terragrunt - Quick Start
+https://davidbegin.github.io/terragrunt/

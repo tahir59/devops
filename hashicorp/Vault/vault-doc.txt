@@ -1,0 +1,37 @@
+* Github
+https://github.com/hashicorp/vault
+https://github.com/hashicorp/vault-helm
+https://github.com/hashicorp/vault-guides
+
+* Website
+https://www.vaultproject.io/
+
+- Documentation
+https://www.vaultproject.io/docs
+- HashiCorp Learn
+https://learn.hashicorp.com/vault
+- Udemy
+https://github.com/zealvora/hashicorp-certified-vault-associate
+
+* Vault AWS Module
+https://registry.terraform.io/modules/hashicorp/vault/aws/0.13.2
+
+* Vault Cluster with S3 backend example
+https://registry.terraform.io/modules/hashicorp/vault/aws/0.13.2/examples/vault-s3-backend
+
+* Vault Cluster with S3 backend example
+https://github.com/hashicorp/terraform-aws-vault/tree/v0.13.2/examples/vault-s3-backend
+
+* Vault and Consul AMI
+https://github.com/hashicorp/terraform-aws-vault/tree/master/examples/vault-consul-ami
+
+* Private TLS Cert
+https://github.com/hashicorp/terraform-aws-vault/tree/master/modules/private-tls-cert
+
+* Vault Examples Helper
+https://github.com/hashicorp/terraform-aws-vault/tree/master/examples/vault-examples-helper
+
+* DOCKER COMPOSE - HASHICORP'S VAULT AND CONSUL PART A (INSTALL VAULT, UNSEALING, STATIC SECRETS, AND POLICIES)
+https://www.bogotobogo.com/DevOps/Docker/Docker-Vault-Consul.php
+https://www.bogotobogo.com/DevOps/Docker/Docker-Vault-Consul-B.php
+https://www.bogotobogo.com/DevOps/Docker/Docker-Vault-Consul-C.php

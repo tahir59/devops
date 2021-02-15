@@ -1,0 +1,27 @@
+- Register Service with Consul Service Discovery
+$ mkdir ./consul.d
+$ nano ./consul.d/web.json
+**************************************************
+{
+  "service": {
+    "name": "web",
+    "tags": [
+      "rails"
+    ],
+    "port": 80,
+    "check": {
+      "args": [
+        "curl",
+        "localhost"
+      ],
+      "interval": "10s"
+    }
+  }
+}
+**************************************************
+$ consul agent -dev -enable-script-checks -config-dir=./consul.d
+$ curl http://localhost:8500/v1/catalog/services
+$ curl http://localhost:8500/v1/catalog/service/service_name
+$ curl http://localhost:8500/v1/catalog/service/web
+$ dig @127.0.0.1 -p 8600 service_name.service.consul
+$ dig @127.0.0.1 -p 8600 web.service.consul

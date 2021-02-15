@@ -1,0 +1,34 @@
+* Theory
+- Overview
+- Use Cases
+- Hardware Requirements (VMs & k8s)
+- Network Requirements (VMs & k8s)
+- Infrastructure Design (VMs & k8s)
+- Datacenter Design (VMs)
+- Datacenter Design (k8s)
+- Production Readiness Checklist (VMs & k8s)
+- Networking (VMs & k8s)
+- Security (VMs & k8s)
+- Monitoring & Failure Recovery (VMs)
+- Monitoring & Failure Recovery (k8s)
+
+* Basic
+- Install Consul on VM
+- Consul DEV Mode
+- Consul Service Discovery
+- Consul Service Mesh
+- Consul KV
+- Install Consul Service Mesh on Kubernetes
+
+* Advanced
+- Consul Installation on VM
+- Consul Installation on Minikube
+- Consul Installation on Kubernetes
+- Secure Applications with Service Sidecar Proxies
+- Enforce a Zero-trust Network with Consul Service Mesh
+- Observe and Manage Layer 7 Traffic with Consul Service Mesh
+- Layer 7 Observability with Consul Service Mesh, Prometheus, Grafana, and Kubernetes
+- Service Configuration with Consul Template
+- Consul Backup
+- Autopilot
+- Rotate Gossip Encryption Keys in Consul

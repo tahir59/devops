@@ -1,0 +1,10 @@
+* GitHub
+https://github.com/hashicorp/packer
+
+* Packer
+https://www.packer.io/
+
+- Packer Documentation
+https://www.packer.io/docs
+- HashiCorp Learn
+https://learn.hashicorp.com/packer

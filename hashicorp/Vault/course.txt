@@ -1,0 +1,60 @@
+* Theory
+- Overview
+- Use Cases
+- Hardware Requirements (VMs & k8s)
+- Network Requirements (VMs & k8s)
+- Infrastructure Design Vault with Consul Storage (VMs & k8s)
+- Infrastructure Design Vault with Integrated Storage (VMs & k8s)
+- Datacenter Design Vault with Consul Storage (VMs)
+- Datacenter Design Vault with Integrated Storage (VMs)
+- Datacenter Design Vault with Consul Storage (k8s)
+- Security (VMs)
+- Security (k8s)
+
+* Basic
+- Install Vault on VM
+- Vault DEV Mode
+- Vault Secret Engines
+- Vault Static Secrets
+- Vault Dynamic Secrets
+- Vault Authentication
+- Vault Policies
+- Vault Init
+
+* Advanced
+- Vault Installation on VM with Consul Storage
+- Vault Installation on VM with Integrated Storage
+- Vault Installation on Minikube
+- Vault Installation on Kubernetes
+- Auth Method: Tokens
+- Auth Method: OIDC
+- Auth Method: AppRole Pull Authentication
+- Auth Method: Vault Agent with Kubernetes
+- Auto-unseal using AWS KMS
+- Auto-unseal using Azure Key Vault
+- Auto-unseal using GCP Cloud KMS
+- Auto-unseal using Transit Secrets Engine
+- Key/Value Secrets Engine
+- Versioned Key/Value Secrets Engine
+- Database Secrets Engine
+- OpenLDAP Secrets Engine
+- SSH Secrets Engine
+- Transit Secrets Engine (EaaS)
+- Vault Cluster Monitoring
+- Generate Root Tokens Using Unseal Keys
+- Rekeying & Rotating Vault
+- Protecting Vault with Resource Quotas
+- Performance Tuning
+- Injecting Secrets into Kubernetes Pods via Vault Helm Sidecar
+- Configure Vault as a Certificate Manager in Kubernetes with Helm
+- Vault Agent with Kubernetes
+- Vault Agent Caching
+- Vault Agent Templates
+- Direct Application Integration
+- Administer Consul Access Control Tokens with Vault
+- Generate mTLS Certificates for Consul with Vault
+- Automatically Rotate Gossip Encryption Keys Secured in Vault
+- Generate Nomad Tokens with HashiCorp Vault
+- Generate mTLS Certificates for Nomad using Vault
+- Vault Integration and Retrieving Dynamic Secrets
+- Inject secrets into Terraform using the Vault provider

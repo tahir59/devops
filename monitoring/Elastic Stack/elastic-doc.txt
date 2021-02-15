@@ -1,0 +1,26 @@
+* Github
+
+* Website
+https://www.elastic.co
+
+* Documentation
+- Elastic Stack and Product Documentation
+https://www.elastic.co/guide/index.html
+- Getting Started
+https://www.elastic.co/guide/en/elastic-stack-get-started/current/index.html
+- Getting started with the Elastic Stack
+https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-elastic-stack.html
+- Running the Elastic Stack on Docker
+https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-docker.html
+- Running the Elastic Stack on Kubernetes
+https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-kubernetes.html
+- Elastic Cloud on Kubernetes
+https://www.elastic.co/guide/en/cloud-on-k8s/current/index.html
+
+* Katacoda
+
+* Instruqt
+
+* DockerHub
+
+* Helm

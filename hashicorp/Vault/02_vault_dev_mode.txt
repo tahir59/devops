@@ -1,0 +1,8 @@
+- Vault DEV Mode
+$ vault server -dev
+$ vault server -dev -dev-listen-address=0.0.0.0:8200
+$ Vault status
+
+- Vault UI
+$ vault server -dev -dev-listen-address=0.0.0.0:8200 -client=0.0.0.0:8500 -ui
+http://localhost:8200/ui

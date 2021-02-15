@@ -1,0 +1,45 @@
+* Tuning Your PostgreSQL Server
+https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server
+
+* postgresqltuner.pl
+https://github.com/jfcoz/postgresqltuner
+
+* PGSQL Commands
+\l  ---	list database
+\l+ --- list database size
+\dt --- list tables
+\d+ --- describe tables
+\du --- list roles
+\q  --- quit
+\c database_name  --- connect database
+
+* Connect
+su postgres
+psql
+
+* Create Database
+CREATE DATABASE db_name;
+
+* Create Role
+CREATE USER username WITH PASSWORD 'password';
+ALTER ROLE username WITH SUPERUSER;
+
+* Drop Role
+DROP ROLE rolename;
+
+* Backup PGSQL
+pg_dump -h host -p port -U username dbname > filename.sql
+
+* Restore PGSQL
+psql -h host -p port -U username --set ON_ERROR_STOP=on dbname < filename.sql
+
+* View All Running Queries
+SELECT * FROM pg_stat_activity WHERE datname = 'db_name';
+
+* Kill All Running Queries
+SELECT pg_terminate_backend (pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'db_name';
+
+* max_connections;
+select count(*) from pg_stat_activity;
+SHOW max_connections;
+ALTER SYSTEM SET max_connections TO '500';

@@ -1,0 +1,90 @@
+*****ICP-INSTALLATION*****
+
+* Architecture
+https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/getting_started/architecture.html
+
+* Preparing your cluster and nodes
+https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/installing/prep_cluster.html
+
+* Installing IBM Cloud Private Cloud Native, Enterprise, and Community editions
+https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/installing/install_containers.html
+
+* Installing the Helm CLI (helm)
+https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/app_center/create_helm_cli.html
+
+* IBM Cloud Private general CLI commands (cloudctl)
+https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/manage_cluster/cli_commands.html
+
+* Enforcing container image security
+https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/manage_images/image_security.html
+
+* Pushing and pulling images
+https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/manage_images/using_docker_cli.html
+
+* Common deployment errors
+https://www.ibm.com/support/knowledgecenter/en/SS8G7U_18.4.1/com.ibm.app.mgmt.doc/content/trouble_common_deployment_errors.htm
+
+*Deployment errors for ClusterImagePolicy and PodSecurityPolicy
+https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.0/troubleshoot/deploy_cluster_impo.html
+
+* How to install IBM Cloud Private? [Updated]
+https://containerized.me/how-to-install-ibm-cloud-private-updated/
+
+* IBM Cloud Private Offline Installation
+https://medium.com/ibm-cloud/ibm-cloud-private-offline-installation-eb730ae13bfc
+
+* HARDWARE
+8vCPU, 32GB RAM, 300GB HD
+
+* OS
+Centos 7
+
+* PREREQUISITES
+disable firewalld
+disable selinux
+edit /etc/hosts
+ELASTIC-IP mycluster.icp
+
+* INSTALL DOCKER
+curl -fsSL https://get.docker.com/ | sh
+systemctl enable docker
+systemctl start docker
+systemctl status docker
+
+* INSTALL ICP
+docker pull ibmcom/icp-inception:3.1.0
+mkdir /opt/ibm-cloud-private-ce-3.1.0
+cd /opt/ibm-cloud-private-ce-3.1.0
+docker run -e LICENSE=accept -v "$(pwd)":/data ibmcom/icp-inception:3.1.0 cp -r cluster /data
+
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+cp ~/.ssh/id_rsa /opt/ibm-cloud-private-ce-3.1.0/cluster/ssh_key
+
+nano /opt/ibm-cloud-private-ce-3.1.0/cluster/hosts
+[master]
+10.128.0.19
+[worker]
+10.128.0.19
+[proxy]
+10.128.0.19
+#[management]
+#10.128.0.19
+#[va]
+#10.128.0.19
+
+cd /opt/ibm-cloud-private-ce-3.1.0/cluster
+docker run --net=host -t -e LICENSE=accept -v "$(pwd)":/installer/cluster ibmcom/icp-inception:3.1.0 install
+
+https://10.128.0.18:8443
+https://mycluster.icp:8443
+
+cloudctl login -a https://10.128.0.19:8443 --skip-ssl-validation -u admin
+
+cp /opt/ibm-cloud-private-ce-3.1.0/cluster/cfc-keys/ca.crt /root/.helm/cert.pem
+cp /opt/ibm-cloud-private-ce-3.1.0/cluster/cfc-keys/ca.key /root/.helm/key.pem
+helm init --client-only
+
+helm install --name nginx-ingress stable/nginx-ingress
+externalIPs:
+- 35.193.199.97

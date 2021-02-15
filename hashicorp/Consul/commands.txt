@@ -1,0 +1,19 @@
+- Commands
+$ consul version
+$ consul reload
+$ consul join
+$ consul members
+$ consul leave
+$ consul validate
+$ consul operator raft list-peers
+$ consul info
+$ consul monitor
+$ consul debug
+
+- Variables
+$ export CONSUL_HTTP_ADDR=127.0.0.1:8500
+$ export CONSUL_CACERT=/etc/consul.d/consul-agent-ca.pem
+$ export CONSUL_CLIENT_CERT=/etc/consul.d/dc1-server-consul-0.pem
+$ export CONSUL_CLIENT_KEY=/etc/consul.d/dc1-server-consul-0-key.pem
+$ export CONSUL_HTTP_TOKEN="<Token SecretID>"
+$ export CONSUL_MGMT_TOKEN="<Token SecretID>"

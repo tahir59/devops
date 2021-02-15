@@ -1,0 +1,13 @@
+* Commands
+packer version
+packer build
+packer inspect
+packer validate
+
+* Install Packer on Linux
+wget https://releases.hashicorp.com/packer/1.6.2/packer_1.6.2_linux_amd64.zip
+unzip packer_1.6.2_linux_amd64.zip
+mv packer /usr/bin
+
+* Packer Bento Images
+https://github.com/chef/bento

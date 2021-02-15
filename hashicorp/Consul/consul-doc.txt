@@ -1,0 +1,28 @@
+* Github
+https://github.com/hashicorp/consul
+
+* Website
+https://www.consul.io/
+
+- Documentation
+https://www.consul.io/docs
+- HashiCorp Learn
+https://learn.hashicorp.com/consul
+- Udemy
+https://github.com/zealvora/hashicorp-certified-consul
+
+* Terraform Consul Modules
+https://registry.terraform.io/modules/GhostGroup/consul/aws/0.4.0
+https://registry.terraform.io/modules/hashicorp/consul-oss/aws/0.2.0
+https://registry.terraform.io/modules/hashicorp/consul/google/0.4.0
+https://registry.terraform.io/modules/hashicorp/consul/azurerm/0.0.5
+
+* Terraform Consul AWS Module
+https://registry.terraform.io/modules/hashicorp/consul/aws/0.7.3
+https://github.com/hashicorp/terraform-aws-consul
+https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/root-example
+https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/consul-examples-helper
+https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/consul-
+
+* Protecting Consul from RCE Risk in Specific Configurations
+https://www.hashicorp.com/blog/protecting-consul-from-rce-risk-in-specific-configurations

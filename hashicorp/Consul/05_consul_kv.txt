@@ -1,0 +1,7 @@
+- Consul KV
+$ consul kv put redis/config/maxconns 25
+$ consul kv get redis/config/maxconns
+$ consul kv get -detailed redis/config/maxconns
+$ consul kv get -recurse redis
+$ consul kv delete redis/config/maxconns
+$ consul kv delete -recurse redis

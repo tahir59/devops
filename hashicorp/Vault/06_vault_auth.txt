@@ -1,0 +1,15 @@
+- Vault authentication
+$ vault auth list
+
+- Token authentication
+$ vault token create
+$ vault login xxxxxxxxxx
+$ vault token revoke xxxxxxxxxx
+
+- GitHub authentication
+$ vault auth enable github
+$ vault write auth/github/config organization=hashicorp
+$ vault write auth/github/map/teams/engineering value=default,applications
+$ vault login -method=github
+$ vault token revoke -mode path auth/github
+$ vault auth disable github
