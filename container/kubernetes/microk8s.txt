@@ -8,6 +8,7 @@ https://microk8s.io/docs/install-proxy
 https://microk8s.io/docs/addons
 
 * Commands
+snap install microk8s --classic
 snap install microk8s --classic --channel=1.15/stable
 microk8s enable dashboard dns helm helm3 ingress metallb registry
 alias kubectl='microk8s kubectl'
