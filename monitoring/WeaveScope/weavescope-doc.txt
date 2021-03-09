@@ -14,4 +14,3 @@ https://www.weave.works/docs/scope/latest/introducing/
 * DockerHub
 
 * Helm
-https://github.com/helm/charts/tree/master/stable/weave-scope
