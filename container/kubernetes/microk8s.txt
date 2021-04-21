@@ -12,10 +12,10 @@ snap install microk8s --classic
 snap install microk8s --classic --channel=1.15/stable
 microk8s enable dashboard dns helm helm3 ingress metallb registry
 alias kubectl='microk8s kubectl'
+alias kubectl='/snap/bin/microk8s.kubectl'
 alias helm='microk8s.helm'
 alias helm3='microk8s.helm3'
 microk8s status
 microk8s start
 microk8s stop
 microk8s reset
-alias kubectl='/snap/bin/microk8s.kubectl'
