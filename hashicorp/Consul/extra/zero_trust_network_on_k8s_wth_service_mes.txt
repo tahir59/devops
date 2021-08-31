@@ -1,0 +1,10 @@
+- Enforce a Zero-trust Network with Consul Service Mesh
+
+Deny all services communication with intentions
+$ kubectl exec -it hashicorp-consul-server-0 /bin/sh
+$ consul intention create -deny "*" "*"
+
+Allow specific service communication with intentions
+$ kubectl exec -it hashicorp-consul-server-0 /bin/sh
+$ consul intention create -allow web api
+$ consul intention check web api

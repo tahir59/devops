@@ -1,0 +1,4 @@
+- Consul Snapshot
+$ consul snapshot save backup.snap
+$ consul snapshot inspect backup.snap
+$ consul snapshot restore backup.snap

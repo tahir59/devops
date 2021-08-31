@@ -1,0 +1,24 @@
+- Service Configuration with Consul Template
+
+- Install Consul template
+$ curl -O https://releases.hashicorp.com/consul-template/0.19.5/consul-template<_version_OS>.tgz
+$ tar -zxf consul-template<_version_OS>.tgz
+
+- Use case: Consul KV
+$ nano find_address.tpl
+**************************************************
+{{ key "/hashicorp/street_address" }}
+**************************************************
+$ consul-template -template "find_address.tpl:hashicorp_address.txt"
+$ cat hashicorp_address.txt
+
+- Use case: discover all services
+$ nano all-services.tpl
+**************************************************
+{{range services}}# {{.Name}}{{range service .Name}}
+{{.Address}}{{end}}
+
+{{end}}
+**************************************************
+$ consul-template -template="all-services.tpl:all-services.txt" -once
+$ cat all-services.txt

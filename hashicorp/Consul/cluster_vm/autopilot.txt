@@ -1,0 +1,17 @@
+- Autopilot
+Server Stabilization
+Dead server cleanup
+Redundancy zones (only available in Consul Enterprise)
+Automated upgrades (only available in Consul Enterprise)
+
+- Configuration
+$ consul operator autopilot get-config
+
+- Server health checking
+$ curl localhost:8500/v1/operator/autopilot/health | jq .
+
+- Server stabilization time
+$ consul operator autopilot set-config -server-stabilization-time=15s
+
+- Dead server cleanup
+$ consul operator autopilot set-config -cleanup-dead-servers=true

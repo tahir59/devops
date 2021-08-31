@@ -1,0 +1,13 @@
+- Vault Installation to Minikube via Helm
+
+- Install the Consul Helm chart
+$ helm repo add hashicorp https://helm.releases.hashicorp.com
+$ helm install consul hashicorp/consul --values helm-consul-values.yml
+
+- Install the Vault Helm chart
+$ helm repo add hashicorp https://helm.releases.hashicorp.com
+$ helm install vault hashicorp/vault --values helm-vault-values.yml
+
+- Initialize and unseal Vault
+$ kubectl exec -ti vault-0 -- vault operator init -key-shares=1 -key-threshold=1
+$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key

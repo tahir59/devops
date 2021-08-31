@@ -1,5 +1,0 @@
-- Install Consul on Linux
-$ wget https://releases.hashicorp.com/consul/1.8.3/consul_1.8.3_linux_amd64.zip
-$ unzip consul_1.8.3_linux_amd64.zip
-$ chown root:root consul
-$ mv consul /usr/local/bin

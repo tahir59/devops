@@ -1,0 +1,10 @@
+- Consul Cluster
+s1# consul agent -config-dir=/etc/consul.d
+s2# consul agent -config-dir=/etc/consul.d
+s3# consul agent -config-dir=/etc/consul.d
+s1# consul join s2_ip s3_ip
+s1# consul leave s2_ip s3_ip
+s1# consul force-leave s2_ip s3_ip
+
+- Consul systemd
+$ nano /etc/systemd/system/consul.service

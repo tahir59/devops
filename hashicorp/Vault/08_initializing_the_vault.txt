@@ -1,6 +1,0 @@
-- Initializing the Vault
-$ vault operator init
-$ vault operator init -key-shares=1 -key-threshold=1
-$ vault operator seal
-$ vault operator unseal
-$ vault login xxxxxxxxxx

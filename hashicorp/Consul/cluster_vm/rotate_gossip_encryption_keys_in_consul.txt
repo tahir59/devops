@@ -1,0 +1,21 @@
+- Rotate Gossip Encryption Keys in Consul
+
+- Check keyring content
+$ consul keyring -list
+
+- Generate a new encryption key
+$ consul keygen | tee encryption.key
+$ export CONSUL_GOSSIP_KEY=$(cat encryption.key)
+
+- Add new key to the keyring
+$ consul keyring -install ${CONSUL_GOSSIP_KEY}
+
+- Verify that the key was installed
+$ consul keyring -list
+
+- Promote the new key to primary
+$ consul keyring -use ${CONSUL_GOSSIP_KEY}
+
+- Remove the old key from the keyring
+$ consul keyring -remove xxxxxxxxxxxxxxxxxxxx
+$ consul keyring -list

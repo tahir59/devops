@@ -1,0 +1,7 @@
+- Vault Cluster
+s1# vault server -config-dir=/etc/vault.d
+s2# vault server -config-dir=/etc/vault.d
+s3# vault server -config-dir=/etc/vault.d
+
+- Vault systemd
+$ nano /etc/systemd/system/vault.service

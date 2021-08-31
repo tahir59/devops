@@ -1,0 +1,54 @@
+global:
+  image: 'consul:1.5.0'
+  domain: consul
+  datacenter: primarydc
+  gossipEncryption:
+    secretName: 'encrypt-key'
+    secretKey: 'key'
+  tls:
+    enabled: true
+    enableAutoEncrypt: true
+    verify: true
+  bootstrapACLs: true
+  acls:
+    manageSystemACLs: true
+server:
+  replicas: 3
+  bootstrapExpect: 3
+  resources: |
+    requests:
+      memory: "32Gi"
+      cpu: "4"
+      disk: "50Gi"
+    limits:
+      memory: "32Gi"
+      cpu: "4"
+      disk: "50Gi"
+  enterpriseLicense:
+    secretName: 'consul-license'
+    secretKey: 'key'
+  affinity: |
+    podAntiAffinity:
+     requiredDuringSchedulingIgnoredDuringExecution:
+       - labelSelector:
+           matchLabels:
+             app: {{ template "consul.name" . }}
+             release: "{{ .Release.Name }}"
+             component: server
+       topologyKey: kubernetes.io/hostname
+client:
+  resources: |
+    requests:
+      memory: "8Gi"
+      cpu: "2"
+      disk: "15Gi"
+    limits:
+      memory: "8Gi"
+      cpu: "2"
+      disk: "15Gi"
+ui:
+  enabled: true
+connectInject:
+  enabled: true
+  default: true
+  aclBindingRuleSelector: “serviceaccount.name!=default”

@@ -1,0 +1,46 @@
+nano main.tf
+****************************************************************************************************
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "3.5.0"
+    }
+  }
+}
+
+provider "google" {
+
+  credentials = file("<NAME>.json")
+
+  project = "<PROJECT_ID>"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+resource "google_compute_instance" "vm_instance" {
+  name         = "terraform-instance"
+  machine_type = "f1-micro"
+
+  boot_disk {
+    initialize_params {
+      image = var.image_name
+    }
+  }
+
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
+}
+****************************************************************************************************
+
+nano variables.tf
+****************************************************************************************************
+variable "image_name" {
+  description = "Value of the Name image for the instance"
+  type        = string
+  default     = "debian-cloud/debian-9"
+}
+****************************************************************************************************

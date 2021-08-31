@@ -1,0 +1,10 @@
+- Multiple Datacenters Federation
+
+$ consul members -wan
+$ consul join -wan <server 1> <server 2> ...
+$ curl http://localhost:8500/v1/catalog/datacenters
+
+$ nano consul.hcl
+**************************************************
+retry_join_wan = ["dc2-server-1", "dc2-server-2"]
+**************************************************

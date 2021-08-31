@@ -1,0 +1,11 @@
+- Vault and Kubernetes Deployment Guide
+
+- Install Vault
+$ helm repo add hashicorp https://helm.releases.hashicorp.com
+$ helm install vault hashicorp/vault -f override-values.yml
+
+- Initialize and unseal Vault
+$ kubectl exec -ti vault-0 -- vault operator init
+$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 1
+$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 2
+$ kubectl exec -ti vault-0 -- vault operator unseal # ... Unseal Key 3

@@ -1,0 +1,142 @@
+- Consul ACL
+
+- UI Policy
+$ nano ui-policy.hcl
+**************************************************
+key_prefix "" {
+   policy = "write"
+}
+node_prefix "" {
+   policy = "read"
+}
+service_prefix "" {
+   policy = "read"
+}
+**************************************************
+$ consul acl policy create -name "ui-token" -description "UI Token Policy" -rules @ui-policy.hcl
+$ consul acl token create -description "UI Token" -policy-name "ui-token"
+$ consul acl set-agent-token agent "<agent token here>"
+
+- Agent Policy
+$ nano agent-policy.hcl
+**************************************************
+node_prefix "" {
+   policy = "write"
+}
+service_prefix "" {
+   policy = "read"
+}
+**************************************************
+$ consul acl policy create -name "agent-token" -description "Agent Token Policy" -rules @agent-policy.hcl
+$ consul acl token create -description "Agent Token" -policy-name "agent-token"
+$ consul acl set-agent-token agent "<agent token here>"
+
+- Agent Policy
+$ nano node-policy.hcl
+**************************************************
+agent_prefix "" {
+  policy = "write"
+}
+node_prefix "" {
+  policy = "write"
+}
+service_prefix "" {
+  policy = "read"
+}
+session_prefix "" {
+  policy = "read"
+}
+**************************************************
+$ consul acl policy create -name node-policy -rules @node-policy.hcl
+$ consul acl token create -description "node token" -policy-name node-policy
+$ consul acl set-agent-token agent "<agent token here>"
+
+- Agent Policy
+$ nano consul-server-one-policy.hcl
+**************************************************
+node "consul-server-one" {
+  policy = "write"
+}
+**************************************************
+$ consul acl policy create -name consul-server-one -rules @consul-server-one-policy.hcl
+$ consul acl token create -description "consul-server-one agent token" -policy-name consul-server-one
+$ consul acl set-agent-token agent "<agent token here>"
+
+- Service Policy
+$ nano dashboard.hcl
+**************************************************
+service {
+  name = "dashboard",
+  port = 9002,
+  check {
+    id = "dashboard-check",
+    http = "http://localhost:9002/health",
+    method = "GET",
+    interval = "1s",
+    timeout = "1s"
+  }
+}
+**************************************************
+nano dashboard-policy.hcl
+**************************************************
+service "dashboard" {
+  policy = "write"
+}
+**************************************************
+consul acl policy create -name "dashboard-service" -rules @dashboard-policy.hcl
+consul acl token create -description "Token for Dashboard Service" -policy-name dashboard-service
+$ nano dashboard.json
+**************************************************
+service {
+  name = "dashboard",
+  port = 9002,
+  token = "xxxxxxxxxxxxxxxxxxxx",
+  check {
+    id = "dashboard-check",
+    http = "http://localhost:9002/health",
+    method = "GET",
+    interval = "1s",
+    timeout = "1s"
+  }
+}
+**************************************************
+
+- Service Mesh Policy
+nano mesh-policy.hcl
+**************************************************
+service "dashboard" {
+  policy = "write"
+}
+
+service "dashboard-sidecar-proxy" {
+  policy = "write"
+}
+
+service_prefix "" {
+  policy = "read"
+}
+
+node_prefix "" {
+  policy = "read"
+}
+**************************************************
+
+- DNS Policy
+**************************************************
+node_prefix "" {
+  policy = "read"
+}
+service_prefix "" {
+  policy = "read"
+}
+query_prefix "" {
+  policy = "read"
+}
+**************************************************
+
+- KV Policy
+**************************************************
+key_prefix "redis/" {
+  policy = "read"
+}
+**************************************************

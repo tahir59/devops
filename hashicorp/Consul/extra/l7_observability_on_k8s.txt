@@ -1,0 +1,15 @@
+- Layer 7 Observability with Consul Service Mesh, Prometheus, Grafana, and Kubernetes
+
+- learn-consul-kubernetes
+https://github.com/hashicorp/learn-consul-kubernetes
+
+- Deploy Consul service mesh using Helm
+
+- Deploy Prometheus with Helm
+$ helm install -f content/layer7-observability/helm/prometheus-values.yaml prometheus prometheus-community/prometheus --version "11.7.0" --wait
+
+- Deploy Grafana with Helm
+$ helm install -f content/layer7-observability/helm/grafana-values.yaml grafana grafana/grafana --version "5.3.6" --wait
+
+- Deploy a demo application (HashiCups) on Kubernetes
+$ kubectl apply -f workloads/hashicups

@@ -1,0 +1,4 @@
+- Consul ACL
+
+- Bootstrap the ACL system
+$ consul acl bootstrap

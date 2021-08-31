@@ -1,0 +1,13 @@
+- Commands
+$ terraform -install-autocomplete
+$ terraform -help
+$ terraform init
+$ terraform fmt
+$ terraform validate
+$ terraform show
+$ terraform state list
+$ terraform plan
+$ terraform apply
+$ terraform apply -var 'var=xxx'
+$ terraform destroy
+$ terraform output

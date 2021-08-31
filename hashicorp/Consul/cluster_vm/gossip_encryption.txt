@@ -1,0 +1,9 @@
+- Gossip encryption
+
+$ consul keygen
+$ nano consul.hcl
+**************************************************
+encrypt = "xxxxxxxxxxxxxxxxxxxx",
+encrypt_verify_incoming = false,
+encrypt_verify_outgoing = false
+**************************************************

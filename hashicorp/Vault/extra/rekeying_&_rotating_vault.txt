@@ -1,0 +1,6 @@
+- Rekeying Vault
+$ vault operator rekey -init -key-shares=3 -key-threshold=2
+$ vault operator rekey -nonce=<nonce>
+
+- Rotating the Encryption Key
+$ vault operator rotate
